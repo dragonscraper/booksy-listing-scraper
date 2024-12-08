@@ -1,0 +1,20 @@
+https://booksy.com/en-us/s/135315_san-francisco-bay-area?locationHash=here%253Acm%253Anamedplace%253A21010233
+
+https://booksy.com/en-us/s/135315_san-francisco-bay-area?locationHash=here%253Acm%253Anamedplace%253A21010233
+
+
+https://booksy.com/en-us/s/135315_san-francisco-bay-area?businessesPage=2&locationHash=here%3Acm%3Anamedplace%3A21010233
+
+
+
+const jsonString = JSON.stringify(window.__NUXT__, null, 2);
+
+// Output to console or save to file
+console.log(jsonString);
+
+// If in a browser, you can download the JSON as a file
+const blob = new Blob([jsonString], { type: "application/json" });
+const link = document.createElement("a");
+link.href = URL.createObjectURL(blob);
+link.download = "nuxt_data.json";
+link.click();
