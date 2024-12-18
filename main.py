@@ -72,7 +72,7 @@ class APISAVER:
         
         else:
             if "Ensure this field" in str( response.text):
-                await append_link({data['url']})
+                await append_link(data['url'])
             else:
                 print( response.json() if json_content else  response.text)
         
@@ -93,7 +93,7 @@ class APISAVER:
         
         else:
             if "Ensure this field" in str(await response.text()):
-                await append_link({data['url']})
+                await append_link(data['url'])
             else:
                 print(await response.json() if json_content else await response.content)
     
@@ -200,7 +200,6 @@ class Helper:
             
             
         self.db_store =  db_store
-        self.limit_req = 5
         self.base_url = "https://booksy.com"
         self.page_url = "https://booksy.com/en-us/s"
         self.api_url = "https://us.booksy.com/core/v2/customer_api/businesses/"
@@ -400,7 +399,7 @@ class Helper:
         
     
     async def run(self):
-        index = 288
+        index = 461
         keep = True
         while keep:
             print(f"Checking page {index}")
@@ -409,7 +408,7 @@ class Helper:
     
     
 if __name__ == "__main__":
-    helper = Helper(db_store=True, max_concurrent_tasks=3)
+    helper = Helper(db_store=True, max_concurrent_tasks=2)
     asyncio.run(helper.run())
     # app =  Helper(
     #     # location_id=135315,
